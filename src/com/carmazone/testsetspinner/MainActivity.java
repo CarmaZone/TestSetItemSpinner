@@ -13,19 +13,19 @@ import android.widget.Spinner;
 
 public class MainActivity extends ActionBarActivity {
 
-	private Spinner semana;
+	private Spinner spinnerSemana;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        Spinner spinnerCategoria = (Spinner) findViewById(R.id.sp_categoria);
+        spinnerSemana = (Spinner) findViewById(R.id.sp_semana);
         //Rellenar spinner con datos de ejemplo
         String[] valores = {"lunes","martes","miercoles","jueves","viernes","sábado", "domingo"};
-        spinnerCategoria.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valores));
+        spinnerSemana.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valores));
         
         //Seleccionar valor del spinner
-        spinnerCategoria.setSelection(Utils.getIndexSpinner(spinnerCategoria, "jueves"));
+        spinnerSemana.setSelection(Utils.getIndexSpinner(spinnerSemana, "jueves"));
 
     }
 
